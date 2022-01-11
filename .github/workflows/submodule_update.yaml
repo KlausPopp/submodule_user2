@@ -1,0 +1,25 @@
+name: Submodule Sync
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: ~
+
+jobs:
+  submodule-sync:
+    name: Submodule Sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submodule1 Sync
+        uses: mheap/submodule-sync-action@v1
+        with:
+          path: submodule1
+          ref: main
+          pr_branch: automated-submodule-update
+          target_branch: main
+      - name: Submodule2 Sync
+        uses: mheap/submodule-sync-action@v1
+        with:
+          path: submodule2
+          ref: main
+          pr_branch: automated-submodule-update
+          target_branch: main
