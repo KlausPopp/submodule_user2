@@ -12,6 +12,7 @@ jobs:
       - name: Submodule1 Sync
         uses: mheap/submodule-sync-action@v1
         with:
+          token: ${{ secrets.PAT_TOKEN }}
           path: submodule1
           ref: main
           pr_branch: automated-submodule-update
@@ -19,6 +20,7 @@ jobs:
       - name: Submodule2 Sync
         uses: mheap/submodule-sync-action@v1
         with:
+          token: ${{ secrets.PAT_TOKEN }}
           path: submodule2
           ref: main
           pr_branch: automated-submodule-update
